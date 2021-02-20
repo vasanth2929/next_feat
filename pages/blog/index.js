@@ -26,6 +26,7 @@ let Blogs = ({ blogs }) => {
               </div>
             );
           })}
+          <h5>Count: {blogs.length}</h5>
         </div>
       )}
     </>
