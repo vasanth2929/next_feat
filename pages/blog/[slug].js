@@ -37,6 +37,7 @@ export async function getStaticProps(ctx) {
       props: {
         blog:blogs.find(item=>ctx.params.slug === item.title) || '',
       },
+      revalidate:1
     };
   } catch (error) {
     return {
