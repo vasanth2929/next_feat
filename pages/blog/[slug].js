@@ -43,6 +43,7 @@ export async function getStaticProps(ctx) {
       props: {
         blog:'',
       },
+      revalidate:1
     };
   }
 }
