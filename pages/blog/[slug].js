@@ -6,7 +6,7 @@ import Link from 'next/link'
 let Blog = ({ blog }) => {
     let r = useRouter()
     useEffect(()=>{
-        if(!blog) {
+        if(typeof blog === 'string') {
             r.push('/');
         }
     })
