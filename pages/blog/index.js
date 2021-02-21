@@ -36,7 +36,7 @@ export default Blogs;
 
 export async function getStaticProps() {
   try {
-    let res = await fetch("https://60125bea84695f001777a2d6.mockapi.io/blogs");
+    let res = await fetch(encodeURI("https://60125bea84695f001777a2d6.mockapi.io/blogs"));
     let blogs = await res.json();
     return {
       props: {
