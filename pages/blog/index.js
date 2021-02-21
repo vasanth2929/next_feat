@@ -18,7 +18,7 @@ let Blogs = ({ blogs }) => {
                 <Link                  
                   href={`/blog/${blog.title}`}
                 >
-                 <span style={{color:"purple"}}> {blog.title}</span>
+                 <span style={{color:"purple",fontWeight:'bold'}}> {blog.title}</span>
                 </Link>
                 <br />
 
