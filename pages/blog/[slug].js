@@ -21,7 +21,7 @@ if(r.isFallback) return <>loading</>
 
                 <p>{blog.decription}</p>
 
-                <Link href="/">
+                <Link href="/blog">
                 back
                 </Link>
     </>
