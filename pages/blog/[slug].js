@@ -10,6 +10,7 @@ let Blog = ({ blog }) => {
             r.push('/');
         }
     })
+if(r.isFallback) return <>loading</>
   return (
     <>
       <Head>
@@ -55,7 +56,7 @@ export async function getStaticPaths(){
         let blogs = await res.json();
         return {
             paths : blogs.map(item=>({params:{slug:item.title}})),
-            fallback: 'blocking'
+            fallback: true
         }
     } catch (error) {
         return {
