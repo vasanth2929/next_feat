@@ -55,12 +55,12 @@ export async function getStaticPaths(){
         let blogs = await res.json();
         return {
             paths : blogs.map(item=>({params:{slug:item.title}})),
-            fallback: false
+            fallback: 'blocking'
         }
     } catch (error) {
         return {
             paths:[],
-            fallback:false
+            fallback:'blocking'
         }
     }
 }
