@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { useRouter} from 'next/router';
 import Link from 'next/link'
 
-let Blog = ({ blog }) => {
+let Blog = ({ blog,err }) => {
     let r = useRouter()
-    useEffect(()=>{
+    
         if(typeof blog === 'string') {
-            r.push('/');
+            return <>{err}</>
         }
-    })
+    
 if(r.isFallback) return <>loading</>
   return (
     <>
@@ -44,6 +44,7 @@ export async function getStaticProps(ctx) {
     return {
       props: {
         blog:'',
+err:error.message
       },
       revalidate:1
     };
