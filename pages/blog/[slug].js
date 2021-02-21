@@ -31,12 +31,12 @@ export default Blog;
 
 export async function getStaticProps(ctx) {
   try {
-    let res = await fetch(encodeURI("https://60125bea84695f001777a2d6.mockapi.io/blogs"));
-    let blogs = await res.json()
+    let res = await fetch(encodeURI("https://60125bea84695f001777a2d6.mockapi.io/blogs/"+ctx.params.slug));
+    let blog = await res.json()
 
     return {
       props: {
-        blog:blogs.find(item=>ctx.params.slug === item.title) || '',
+        blog:blog || '',
       },
       revalidate:1
     };
@@ -56,7 +56,7 @@ export async function getStaticPaths(){
         let res = await fetch(encodeURI("https://60125bea84695f001777a2d6.mockapi.io/blogs"));
         let blogs = await res.json();
         return {
-            paths : blogs.map(item=>({params:{slug:item.title}})),
+            paths : blogs.map(item=>({params:{slug:item.id}})),
             fallback: true
         }
     } catch (error) {
