@@ -16,7 +16,7 @@ let Blogs = ({ blogs }) => {
             return (
               <div key={blog.title}>
                 <Link                  
-                  href={`/blog/${blog.title}`}
+                  href={`/blog/${blog.id}`}
                 >
                  <span style={{color:"purple",fontWeight:'bold'}}> {blog.title}</span>
                 </Link>
